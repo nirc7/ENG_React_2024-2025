@@ -13,17 +13,25 @@ export default class CCStudent extends Component {
   btnAddGrade = () => {
     //this.state.grade = 300; //ERROR!
     //this.setState({ grade: 400 , bonus:10});
-    
-    console.log('bofore grade=',  this.state.grade);
-    this.setState(prevS => ({ grade: prevS.grade + 5, bonus: 10 }));
-    console.log('after grade=',  this.state.grade);
-    
+
+    console.log('bofore grade=', this.state.grade);
+
+    //opt1
+    let newGarde = this.state.grade + 5;
+    console.log(newGarde);
+    this.setState({ grade: newGarde, age: 20 });
+
+    // //opt2
+    // this.setState(prevS => ({ grade: prevS.grade + 5, bonus: 10 }));
+
+    console.log('after grade=', this.state.grade);
+
     //this.render() //ERROR!
   }
 
   render() {
-    console.log('render grade=',  this.state.grade);
-    
+    console.log('render grade=', this.state.grade);
+
     return (
       <div style={{
         color: 'grey', margin: 10, padding: 10,
@@ -35,7 +43,8 @@ export default class CCStudent extends Component {
         grade={this.props.grade} <br />
         state grade = {this.state.grade} <br />
         bonus = {this.state.bonus} <br />
-        <button onClick={this.btnAddGrade}>Add Grade</button>
+        <button onClick={this.btnAddGrade}>Add Grade</button> <br />
+        age={this.state.age}
       </div>
     );
   }

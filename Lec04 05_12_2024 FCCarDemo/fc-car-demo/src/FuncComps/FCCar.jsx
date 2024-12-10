@@ -10,7 +10,8 @@ export default function FCCar(props) {
   }
 
   function btnSayHello() {
-    console.log('Hello ' + ownerName);
+    ownerName = 'Hello ' + ownerName;
+    console.log(ownerName);    
     //run line 23-35 run return FCCAr() //ERROR RERENDER
   }
 
