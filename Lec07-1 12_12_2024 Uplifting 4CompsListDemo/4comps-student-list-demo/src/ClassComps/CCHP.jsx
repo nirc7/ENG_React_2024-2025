@@ -25,6 +25,7 @@ export default class CCHP extends Component {
     let newCounter = this.state.counter + 1;
     let newStudents = [...this.state.students, { id: uuidv4(), name }];
     console.log('before ', this.state.students);
+    
     this.setState({ students: newStudents, counter: newCounter }, () => {
       console.log('added new students',  this.state.students);
     });
